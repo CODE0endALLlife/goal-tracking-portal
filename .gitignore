@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+
+# Build output
+.next/
+dist/
+build/
+
+# Environment and local state
+.env
+.env.*
+!.env.example
+*.local
+test.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# OS/editor
+.DS_Store
+.idea/
+.vscode/
+
