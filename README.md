@@ -31,6 +31,35 @@ docker compose up --build
 - **Backend API**: http://localhost:8000
 - **Swagger Docs**: http://localhost:8000/docs
 
+## Deploying Frontend on Vercel
+
+This repository is a monorepo. The Next.js app lives in `frontend/`, so set the
+Vercel project **Root Directory** to:
+
+```text
+frontend
+```
+
+Use these Vercel settings:
+
+| Setting | Value |
+|---------|-------|
+| Framework Preset | Next.js |
+| Root Directory | `frontend` |
+| Install Command | `npm ci` |
+| Build Command | `npm run build` |
+| Output Directory | leave default |
+
+Add this frontend environment variable in Vercel:
+
+```env
+NEXT_PUBLIC_API_URL=https://your-backend-url.com
+```
+
+Replace `https://your-backend-url.com` with the deployed FastAPI backend URL.
+Do not use `localhost:8000` in production because Vercel visitors cannot reach
+your local machine.
+
 ### 3. Development (without Docker)
 
 **Backend:**
